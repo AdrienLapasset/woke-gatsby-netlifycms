@@ -6,14 +6,26 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: projects
+    label: Projects
+    folder: cms/projects
     create: true
     filter: {field: "language", value: "fr"}
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
       - { name: featured Image, label: FeaturedImage, widget: image , allow_multiple: false}
+      - { name: body, label: Body, widget: markdown }
+
+  - name: blog
+    label: Blog
+    folder: cms/blog
+    create: true
+    filter: {field: "language", value: "fr"}
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: featured Image, label: FeaturedImage, widget: image , allow_multiple: false}
+      - { name: body, label: Body, widget: markdown }
